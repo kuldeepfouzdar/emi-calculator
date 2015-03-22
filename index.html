@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Emi Calculator</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="main.js"></script>
+
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h2>EMI Calculater</h2>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="form-group">
+					<label for="principal">Principal: </label>
+					<input type="text" class="form-control" id="principal">
+				</div>
+				<div class="form-group">
+					<label for="rate">Interest Rate: </label>
+					<input type="text" class="form-control" id="rate" value="10.15">
+				</div>
+				<div class="form-group">
+					<label for="emi">EMI: </label>
+					<input type="text" class="form-control" id="emi">
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-default" onclick="prepare_emi();">Calculate</button>
+				</div>
+				<div id="results" hidden>
+					<p>
+						Initial Principal: <mark><span id="result_principal"></span></mark>
+					</p>
+					<p>
+						Interest Rate: <mark><span id="result_rate"></span></mark>
+					</p>
+					<p>
+						Interest Paid: <mark><span id="result_interest_paid"></span></mark>
+					</p>
+					<p>
+						Duration: <mark><span id="result_duration"></span> Months</mark>
+					</p>
+					<p>
+						Total Amount Paid: <mark><span id="result_total_amount"></span></mark>
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-9" id="table-container">
+				<div class="row">
+					<div class="col-sm-1">
+						Month
+					</div>
+					<div class="col-sm-2">
+						EMI paid
+					</div>
+					<div class="col-sm-3">
+						Interest
+					</div>
+					<div class="col-sm-3">
+						effective emi
+					</div>
+					<div class="col-sm-3">
+						Principal
+					</div>
+				</div>
+				<div class="row" hidden id="to-clone">
+					<div class="col-sm-1">
+						0
+					</div>
+					<div class="col-sm-2">
+						<input type="text" class="form-control monthly-emi" value="0" size="6">
+					</div>
+					<div class="col-sm-3">
+						0
+					</div>
+					<div class="col-sm-3">
+						0
+					</div>
+					<div class="col-sm-3">
+						0
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
